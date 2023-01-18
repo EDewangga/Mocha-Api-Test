@@ -25,7 +25,6 @@ describe('/GET Data', function () {
         let res = await chai.request(baseUrl).get(apiEndPoint).query({Description: 'Holiday'});
         expect(res.status).to.equal(200);
         res.body.entries.forEach(element => {
-            console.log(element);
             expect(element.Description.toLowerCase()).to.contains('holiday');
         });
     });
